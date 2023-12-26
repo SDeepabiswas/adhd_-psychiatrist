@@ -1,9 +1,12 @@
 import React from "react"
 import brain from "../assests/brain.jpg"
 import notes from "../assests/notes.jpg"
+import { useAuth0  } from '@auth0/auth0-react';
 import book from "../assests/books.jpg"
-function SubscriptionPlans() {
+const SubscriptionPlans = () => {
+    const {loginWithRedirect} = useAuth0();
     return (
+        
         <div className="w-full py-[10rem] px-4 bg-white">
             <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8">
                 {/* prothom card */}
@@ -16,7 +19,7 @@ function SubscriptionPlans() {
                   <p className='py-2 border-b mx-8'>some benefits</p>
                   <p className='py-2 border-b mx-8'>some benefits</p>
               </div>   
-                    <button className='bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3'>Start Trial</button>
+                    <button className='bg-black text-[#00df9a] w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3' onClick={() => loginWithRedirect()}>Start Trial</button>
                 </div>
                 {/* second card */}
                 <div className="w-full flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300 shadow-green-500 shadow-2xl bg-gray-100 ">
